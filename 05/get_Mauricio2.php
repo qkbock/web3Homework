@@ -15,9 +15,24 @@
 	<title>First API </title>
 	</head>
 	<body>
-		<?php foreach($formatted_content as $a){
-			if(is_array($a)){ ?>
-				
+		<?php foreach($formatted_content as $a => $b){ ?>
+			<h1><?php echo $a; ?></h1>
+			<?php if(is_array($b)){
+				foreach($b as $c){ 
+					if(is_array($c)){
+						foreach($c as $d => $e){
+							
+							?><p><?php echo $e;?></p><?php
+						}
+					}
+					else{ ?>
+						<p><?php echo $c;?></p>	
+					<?php
+					}
+				}
+			}
+			else{ ?>
+				<p><?php echo $b;?></p>
 			<?php }
 		} ?>	
 	</body>
